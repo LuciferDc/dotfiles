@@ -4,6 +4,10 @@
   default = current
 [color]
   ui = auto
+	status = auto
+	brach = auto
+	branch = auto
+	diff = auto
 [alias]
   aa = add --all
   ap = add --patch
@@ -21,6 +25,7 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+	diff = auto
 [merge]
   ff = only
 [commit]
@@ -29,3 +34,10 @@
   prune = true
 [include]
   path = ~/.gitconfig.local
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = Li Jianhua
+	email = lijianhua_oop@163.com

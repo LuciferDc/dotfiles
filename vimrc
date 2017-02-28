@@ -83,7 +83,13 @@ if executable('ag')
 endif
 
 " Color scheme
-colorscheme github
+" colorscheme molokai
+" colorscheme dracula
+Bundle 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility=""
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -94,6 +100,7 @@ set colorcolumn=+1
 " Numbers
 set number
 set numberwidth=5
+highlight LineNr cterm=bold ctermfg=white
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -161,3 +168,33 @@ set diffopt+=vertical
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+hi comment ctermfg=6
+
+
+" Highlight current line
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
+
+
+" Tagbar
+"映射tagbar的快捷键
+let g:tagbar_autofocus = 1
+let g:tagbar_width=26
+let g:tagbar_ctags_bin="/usr/local/bin/ctags"
+map <F6> :TagbarToggle<CR>
+
+" NERD tree
+let NERDChristmasTree=0
+let NERDTreeWinSize=35
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeShowBookmarks=1
+let NERDTreeWinPos="left"
+" Automatically open a NERDTree if no files where specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Open a NERDTree
+map <F5> :NERDTreeToggle<CR>
+
