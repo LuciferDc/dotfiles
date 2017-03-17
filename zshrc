@@ -51,7 +51,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git web-search encode64)
 
 # User configuration
 
@@ -86,7 +86,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias laravel='~/.composer/vendor/bin/laravel'
 . `brew --prefix`/etc/profile.d/z.sh
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-export PATH="$PATH":/usr/local/mysql/bin
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+export PATH=${PATH}:/usr/local/mysql/bin
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias cat=ccat
+alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
+alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
+alias php-fpm.restart='php-fpm.stop && php-fpm.start'
