@@ -59,6 +59,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source ~/.bashrc
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -93,3 +94,6 @@ alias cat=ccat
 alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
 alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
 alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export GOPATH=$HOME/go

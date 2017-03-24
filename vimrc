@@ -15,7 +15,7 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-set ignorecase    "搜索忽略大小写
+set ignorecase    "索忽略大小写
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -84,7 +84,7 @@ if executable('ag')
 endif
 
 " Color scheme
-" colorscheme molokai
+"colorscheme molokai
 " colorscheme dracula
 Bundle 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
@@ -181,9 +181,10 @@ set cursorline cursorcolumn
 " Tagbar
 "映射tagbar的快捷键
 let g:tagbar_autofocus = 1
-let g:tagbar_width=26
+let g:tagbar_width=36
 let g:tagbar_ctags_bin="/usr/local/bin/ctags"
 map <F6> :TagbarToggle<CR>
+
 
 " NERD tree
 let NERDChristmasTree=0
@@ -199,3 +200,81 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Open a NERDTree
 map <F5> :NERDTreeToggle<CR>
 
+map <F4> :call TitleDet()<cr>
+
+function AddTitle()
+
+    call append(1,"/**")
+    call append(2," * Author  by Li Jianhua")
+    call append(3," */")
+    echohl WarningMsg | echo "Successful in adding copyright." | echohl None
+
+endf
+
+function UpdateTitle()
+
+     normal m'
+     execute '/# Last modified/s@:.*$@\=strftime(":\t%Y-%m-%d %H:%M")@'
+     normal ''
+     normal mk
+     execute '/# Filename/s@:.*$@\=":\t".expand("%:t")@'
+     execute "noh"
+     normal 'k
+     echohl WarningMsg | echo "Successful in updating the copyright." | echohl None
+
+endfunction
+
+function TitleDet()
+
+    let n=1
+    while n < 10
+        let line = getline(n)
+        if line =~ '^\#\s*\S*Last\smodified\S*.*$'
+            call UpdateTitle()
+            return
+        endif
+        let n = n + 1
+    endwhile
+    call AddTitle()
+
+endfunction
+
+autocmd BufWritePre *.go :Fmt
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:tagbar_type_go = {
+  \ 'ctagstype' : 'go',
+  \ 'kinds'     : [
+    \ 'p:package',
+    \ 'i:imports:1',
+    \ 'c:constants',
+    \ 'v:variables',
+    \ 't:types',
+    \ 'n:interfaces',
+    \ 'w:fields',
+    \ 'e:embedded',
+    \ 'm:methods',
+    \ 'r:constructor',
+    \ 'f:functions'
+  \ ],
+  \ 'sro' : '.',
+  \ 'kind2scope' : {
+    \ 't' : 'ctype',
+    \ 'n' : 'ntype'
+  \ },
+  \ 'scope2kind' : {
+    \ 'ctype' : 't',
+    \ 'ntype' : 'n'
+  \ },
+  \ 'ctagsbin'  : 'gotags',
+  \ 'ctagsargs' : '-sort -silent'
+\ }
+
+
+" Gif config
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
