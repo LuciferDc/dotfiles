@@ -86,7 +86,6 @@ endif
 " Color scheme
 "colorscheme molokai
 " colorscheme dracula
-Bundle 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
@@ -101,7 +100,7 @@ set colorcolumn=+1
 " Numbers
 set number
 set numberwidth=5
-highlight LineNr cterm=bold ctermfg=white
+" highlight LineNr cterm=bold ctermfg=white
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -165,11 +164,7 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Always use vertical diffs
 set diffopt+=vertical
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
-hi comment ctermfg=6
+" hi comment ctermfg=6
 
 
 " Highlight current line
@@ -278,3 +273,37 @@ let g:tagbar_type_go = {
 " Gif config
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
+
+
+""""""""""""""""""""""""""""""""""""""""""
+""" airline设置
+""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
+set lazyredraw
+let g:airline_theme='powerlineish'
+" 使用powerline打过补丁的字体
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+    let g:airline_symbols={}
+endif
+
+"设置切换Buffer快捷键"
+ nnoremap <C-tab> :bn<CR>
+ nnoremap <C-s-tab> :bp<CR>
+ " 关闭状态显示空白符号计数
+ let g:airline#extensions#whitespace#enabled = 0
+ let g:airline#extensions#whitespace#symbol = '!'
+ let g:airline#extensions#tabline#enabled = 1
+ " 设置consolas字体"前面已经设置过
+ "set guifont=Consolas\ for\ Powerline\ FixedD:h11
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+" old vim-powerline symbols
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+

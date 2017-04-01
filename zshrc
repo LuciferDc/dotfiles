@@ -86,6 +86,7 @@ source ~/.bashrc
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias laravel='~/.composer/vendor/bin/laravel'
+alias elasticsearch='/usr/local/elasticsearch-5.2.2/bin/elasticsearch'
 . `brew --prefix`/etc/profile.d/z.sh
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export PATH=${PATH}:/usr/local/mysql/bin
@@ -97,3 +98,19 @@ alias php-fpm.restart='php-fpm.stop && php-fpm.start'
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export GOPATH=$HOME/go
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+alias ls='ls -vG'
+alias ll='ls -al'
+alias la='ls -a'
+alias vi='vim'
+
+#enables colorin the terminal bash shell export
+export CLICOLOR=1
+
+#sets up thecolor scheme for list export
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+

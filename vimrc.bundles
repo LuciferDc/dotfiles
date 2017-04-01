@@ -55,6 +55,10 @@ Plugin 'jstemmer/gotags'
 Plugin 'bradfitz/goimports'
 " 行级跳转
 Plugin 'easymotion/vim-easymotion'
+" vim wiki
+Plugin 'vimwiki/vimwiki'
+
+Plugin 'altercation/vim-colors-solarized'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
