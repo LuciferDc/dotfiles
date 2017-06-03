@@ -86,6 +86,9 @@ endif
 " Color scheme
 "colorscheme molokai
 " colorscheme dracula
+" syntax on
+" color dracula
+" set t_Co=256
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
@@ -200,8 +203,11 @@ map <F4> :call TitleDet()<cr>
 function AddTitle()
 
     call append(1,"/**")
-    call append(2," * Author  by Li Jianhua")
-    call append(3," */")
+    call append(2," * @Author  by Li Jianhua")
+    call append(3," * @Last modified: ".strftime("%Y-%m-%d %H:%M"))
+    call append(4," * @Filename     : ".expand("%:t"))
+    call append(5," *")
+    call append(6," */")
     echohl WarningMsg | echo "Successful in adding copyright." | echohl None
 
 endf
@@ -275,3 +281,8 @@ let g:tagbar_type_go = {
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 
+filetype plugin on
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
