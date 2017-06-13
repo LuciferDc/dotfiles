@@ -286,3 +286,53 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+"--------------------------------------------------------------------------
+"vim-airline
+"--------------------------------------------------------------------------
+let g:airline_theme="bubblegum"
+
+"这个是安装字体后 必须设置此项"
+let g:airline_powerline_fonts = 1
+
+"打开tabline功能,方便查看Buffer和切换,省去了minibufexpl插件
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+"设置切换Buffer快捷键"
+nmap <C-b>n  :bnext<CR>
+nmap <C-b>p  :bprev<CR>
+" 关闭状态显示空白符号计数
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#symbol = '!'
+" 设置consolas字体"前面已经设置过
+"set guifont=Consolas\ for\ Powerline\ FixedD:h11
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+" old vim-powerline symbols
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.readonly = '⭤'
+
+" 回滚历史
+nnoremap <leader>h :GundoToggle<CR>
+
+
+" 命名空间
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+" 生成注释
+inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
+inoremap <leader>doc :call PhpDocSingle()<CR>
+vnoremap <C-D> :call PhpDocRange()<CR>
