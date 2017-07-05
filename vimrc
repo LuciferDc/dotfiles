@@ -3,7 +3,7 @@
 set nocompatible
 
 " Leader
-let mapleader = " "
+let mapleader = "\<Space>"
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -88,7 +88,7 @@ endif
 " colorscheme dracula
 " syntax on
 " color dracula
-" set t_Co=256
+set t_Co=256
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
@@ -336,3 +336,15 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
 inoremap <leader>doc :call PhpDocSingle()<CR>
 vnoremap <C-D> :call PhpDocRange()<CR>
+
+" ag.vim
+let g:ackprg = 'ag --nogroup --nocolor --column'
+nnoremap ,gg :Ag
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files.
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " Ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
