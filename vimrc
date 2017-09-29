@@ -103,6 +103,7 @@ set colorcolumn=+1
 " Numbers
 set number
 set numberwidth=5
+set relativenumber
 highlight LineNr cterm=bold ctermfg=white
 
 " Tab completion
@@ -319,6 +320,9 @@ let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.readonly = '⭤'
+let g:airline#extensions#tabline#fnamemod = ':t'
+nmap zl :bn<cr>
+nmap zh :bp<cr>
 
 " 回滚历史
 nnoremap <leader>h :GundoToggle<CR>

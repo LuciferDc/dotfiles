@@ -84,6 +84,15 @@ Plugin 'vim-scripts/PDV--phpDocumentor-for-Vim'
 " Ag
 Plugin 'vim-scripts/ag.vim'
 
+" vim-blade
+Plugin 'jwalton512/vim-blade'
+
+" vim-laravel
+Plugin 'noahfrederick/vim-laravel'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-projectionist'
+Plugin 'noahfrederick/vim-composer'
+
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
