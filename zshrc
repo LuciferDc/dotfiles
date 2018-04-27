@@ -60,6 +60,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 source ~/.bashrc
+source ~/.aliases
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -85,31 +86,20 @@ source ~/.bashrc
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias laravel='~/.composer/vendor/bin/laravel'
-alias elasticsearch='/usr/local/elasticsearch-5.2.2/bin/elasticsearch'
 . `brew --prefix`/etc/profile.d/z.sh
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 export PATH=${PATH}:/usr/local/mysql/bin
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-alias cat=ccat
-alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
-alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
-alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:~/.composer/vendor/bin
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export GOPATH=$HOME/go
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$GOPATH/bin:$PATH
 
-alias ls='ls -vG'
-alias ll='ls -al'
-alias la='ls -a'
-alias vi='vim'
-# git
-alias fmgl='git --no-pager log --pretty=format:"%h - %an, %ar : %s"'
-alias gll="git log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'"
-alias art="php artisan"
 
 #enables colorin the terminal bash shell export
 export CLICOLOR=1

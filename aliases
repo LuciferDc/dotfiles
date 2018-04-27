@@ -33,3 +33,28 @@ alias path="echo $PATH | tr -s ':' '\n'"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
+
+# git
+alias fmgl='git --no-pager log --pretty=format:"%h - %an, %ar : %s"'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gll="git log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'"
+alias art="php artisan"
+alias dfb="git branch |grep 'feature' |xargs git branch -D"
+alias dhb="git branch |grep 'hotfix' |xargs git branch -D"
+
+#ll
+alias ls='ls -vG'
+alias ll='ls -al'
+alias la='ls -a'
+alias vi='vim'
+
+
+alias laravel='~/.composer/vendor/bin/laravel'
+alias elasticsearch='/usr/local/elasticsearch-5.2.2/bin/elasticsearch'
+
+
+alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
+alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
+alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+alias cat=ccat

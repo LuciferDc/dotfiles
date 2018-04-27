@@ -93,6 +93,9 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-projectionist'
 Plugin 'noahfrederick/vim-composer'
 
+" go补全
+"Plugin 'Valloric/YouCompleteMe'
+
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
