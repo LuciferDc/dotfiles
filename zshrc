@@ -118,3 +118,4 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export PATH="/usr/local/opt/go@1.9/bin:$PATH"

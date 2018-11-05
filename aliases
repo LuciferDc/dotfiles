@@ -54,7 +54,8 @@ alias laravel='~/.composer/vendor/bin/laravel'
 alias elasticsearch='/usr/local/elasticsearch-5.2.2/bin/elasticsearch'
 
 
-alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
-alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
+alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist"
+alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist"
 alias php-fpm.restart='php-fpm.stop && php-fpm.start'
 alias cat=ccat
+alias kn="sudo ps -ef | grep nginx | grep -v grep | awk '{print $2}' | xargs kill -9"
