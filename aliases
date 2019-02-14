@@ -15,6 +15,18 @@ alias v="$VISUAL"
 
 # git
 alias gci="git pull --rebase && rake && git push"
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias goc='git checkout '
+alias gk='gitk --all&'
+alias gx='gitx --all'
+alias fmgl='git --no-pager log --pretty=format:"%h - %an, %ar : %s"'
+alias gll="git log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'"
+alias dfb="git branch |grep 'feature' |xargs git branch -D"
+alias dhb="git branch |grep 'hotfix' |xargs git branch -D"
 
 # Bundler
 alias b="bundle"
@@ -35,13 +47,8 @@ alias path="echo $PATH | tr -s ':' '\n'"
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 
 
-# git
-alias fmgl='git --no-pager log --pretty=format:"%h - %an, %ar : %s"'
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gll="git log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'"
+# laravel 
 alias art="php artisan"
-alias dfb="git branch |grep 'feature' |xargs git branch -D"
-alias dhb="git branch |grep 'hotfix' |xargs git branch -D"
 
 #ll
 alias ls='ls -vG'
@@ -59,3 +66,7 @@ alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php
 alias php-fpm.restart='php-fpm.stop && php-fpm.start'
 alias cat=ccat
 alias kn="sudo ps -ef | grep nginx | grep -v grep | awk '{print $2}' | xargs kill -9"
+alias toMp4="ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i wanke.ppm -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 wanke.mp4"
+alias fis3="/usr/local/Cellar/node/9.3.0_1/bin/fis3"
+alias man=tldr
+alias lc=colorls

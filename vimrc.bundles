@@ -16,7 +16,7 @@ Plugin 'croaky/vim-colors-github'
 " coffee 配色支持
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pbrisbin/vim-mkdir'
-Plugin 'scrooloose/syntastic'
+Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-bundler'
@@ -92,6 +92,9 @@ Plugin 'noahfrederick/vim-laravel'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-projectionist'
 Plugin 'noahfrederick/vim-composer'
+
+Plugin 'rust-lang/rust.vim'
+Plugin 'w0rp/ale'
 
 " go补全
 "Plugin 'Valloric/YouCompleteMe'

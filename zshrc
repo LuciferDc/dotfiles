@@ -5,8 +5,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="cloud"
-ZSH_THEME="ys"
+ZSH_THEME="cloud"
+#ZSH_THEME="spaceship"
+#ZSH_THEME="ys"
 #ZSH_THEME="miloshadzic"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -59,7 +60,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bashrc
+#source ~/.bashrc
 source ~/.aliases
 
 # You may need to manually set your language environment
@@ -87,7 +88,7 @@ source ~/.aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 . `brew --prefix`/etc/profile.d/z.sh
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 export PATH=${PATH}:/usr/local/mysql/bin
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -119,3 +120,8 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export PATH="/usr/local/opt/go@1.9/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+echo -e "\033]6;1;bg;red;brightness;40\a"
+echo -e "\033]6;1;bg;green;brightness;44\a"
+echo -e "\033]6;1;bg;blue;brightness;52\a"
