@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="cloud"
+ZSH_THEME="agnoster"
 #ZSH_THEME="spaceship"
 #ZSH_THEME="ys"
 #ZSH_THEME="miloshadzic"
@@ -87,11 +87,12 @@ source ~/.aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-. `brew --prefix`/etc/profile.d/z.sh
+#. `brew /z.sh
 #export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 export PATH=${PATH}:/usr/local/mysql/bin
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dev/play/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/dev/play/zsh-z/zsh-z.plugin.zsh
+source ~/dev/play/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:~/.composer/vendor/bin
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
